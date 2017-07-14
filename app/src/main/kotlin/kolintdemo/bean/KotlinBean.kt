@@ -6,5 +6,5 @@ package kolintdemo.bean
 data class KotlinBean(
     var id : Int,
     var name : String,
-    var age : String
+    var desc : String
 )

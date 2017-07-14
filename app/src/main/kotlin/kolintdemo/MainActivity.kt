@@ -25,9 +25,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
     }
 
     fun initView() {
-        var activity : KotlinBean = KotlinBean(StaticValue.ACTIVITY, "activity", "01");
-        var fragment : KotlinBean = KotlinBean(StaticValue.FRAGMENT, "fragment", "02");
-        var adapter : KotlinBean = KotlinBean(StaticValue.ADAPTER, "adapter", "03");
+        var activity : KotlinBean = KotlinBean(StaticValue.ACTIVITY, "activity", "测试kotlin Activity");
+        var fragment : KotlinBean = KotlinBean(StaticValue.FRAGMENT, "fragment", "测试kotlin fragment");
+        var adapter : KotlinBean = KotlinBean(StaticValue.VIEW, "View", "测试kotlin View");
 
         list = listOf<KotlinBean>(activity, fragment, adapter);
 
@@ -35,4 +35,5 @@ class MainActivity : BaseKotlinFragmentActivity() {
         mRecycleView.adapter = MainAdapter(this, list);
         Log.d("MainActivity", "MainActivity=" + arr.asList())
     }
+
 }

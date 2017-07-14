@@ -41,8 +41,8 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
         holder!!.tvItem = holder!!.itemView.findViewById(R.id.list_item) as TextView;
         var sb : StringBuilder = StringBuilder("name =");
         sb.append(bean!!.name);
-        sb.append("  age=");
-        sb.append(bean.age);
+        sb.append("  desc=");
+        sb.append(bean.desc);
 
         holder!!.tvItem!!.setText(sb.toString());
         /*var tv = (holder!!.itemView);
@@ -71,10 +71,11 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
                 StaticValue.FRAGMENT -> {
                     i = Intent(mContext, BaseKotlinFragmentActivity :: class.java);
                 }
-                StaticValue.ADAPTER -> {
+                StaticValue.VIEW -> {
                     i = Intent(mContext, KotlinActivity :: class.java);
                 }
             }
+            i!!.putExtra(StaticValue.EXTRA_NAME, bean.desc);
             mContext!!.startActivity(i);
             Toast.makeText(mContext, bean.name, Toast.LENGTH_SHORT).show();
 

@@ -1,23 +1,18 @@
 package kolintdemo
 
 import android.app.Application
+import kolintdemo.util.StaticValue
 
 /**
  * Created by wangyuan on 2017/7/12.
  */
 open class MyApp : Application() {
 
-    var mApp : MyApp? = null;
-
     override fun onCreate() {
         super.onCreate()
-        mApp = this;
-    }
-
-    companion object {
-
-        fun getInstance(): MyApp {
-            return MyApp().mApp!!;
-        }
+        StaticValue.mApp = this;
+        val dm = getResources().getDisplayMetrics()
+        StaticValue.screenWidth = dm.widthPixels
+        StaticValue.screenHeight = dm.heightPixels
     }
 }

@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.wangyuan.kotlindemo.R
-import kotlinx.android.synthetic.main.kotlin_frag.*
+import kolintdemo.util.StaticValue
+import kolintdemo.view.BespokeTimePickerView
 
 /**
  * Created by wangyuan on 2017/7/12.
@@ -14,14 +15,30 @@ import kotlinx.android.synthetic.main.kotlin_frag.*
 class MyFragment : AbsBaseFragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var v = inflater?.inflate(R.layout.kotlin_frag, container, false)
-        initView();
+        initView(v);
         return v
     }
 
-    fun initView() {
-        btn_kotlin_frag.setOnClickListener {
+    var timeView : BespokeTimePickerView? = null;
+
+    fun initView(v : View?) {
+        /*btn_kotlin_frag.setOnClickListener {
             toast("测试kotlin Toast", Toast.LENGTH_LONG);
+        }*/
+//        toast("测试kotlin Toast", Toast.LENGTH_LONG);
+
+
+        this.timeView = v!!.findViewById(R.id.timeView) as BespokeTimePickerView;
+        if(timeView != null) {
+            timeView!!.setOnClickListener(timeView)
+            timeView!!.buildBlocks(StaticValue.TRUE);
+            timeView!!.setCallBack(lis);
         }
     }
 
+    val lis = object : BespokeTimePickerView.OnItemSelected {
+        override fun onItemTimeSelect(timeId: Int, time: String) {
+            toast(time, Toast.LENGTH_SHORT);
+        }
+    }
 }
