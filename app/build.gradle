@@ -49,6 +49,7 @@ dependencies {
     // In case you need support-v4 bindings
     // For appcompat-v7 bindings
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.jetbrains.anko:anko-sdk15:0.8.2'
     compile 'org.jetbrains.anko:anko-support-v4:0.8.2'
