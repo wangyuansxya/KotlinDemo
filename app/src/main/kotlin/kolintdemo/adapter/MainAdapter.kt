@@ -8,11 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import com.wangyuan.kotlindemo.KotlinActivity
 import com.wangyuan.kotlindemo.R
-import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.activity.MyActivity
+import kolintdemo.activity.MyFragmentActivity
 import kolintdemo.bean.KotlinBean
 import kolintdemo.util.StaticValue
 import org.jetbrains.anko.onClick
@@ -69,7 +68,7 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
                     i = Intent(mContext, MyActivity :: class.java);
                 }
                 StaticValue.FRAGMENT -> {
-                    i = Intent(mContext, BaseKotlinFragmentActivity :: class.java);
+                    i = Intent(mContext, MyFragmentActivity :: class.java);
                 }
                 StaticValue.VIEW -> {
                     i = Intent(mContext, KotlinActivity :: class.java);
@@ -77,7 +76,7 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
             }
             i!!.putExtra(StaticValue.EXTRA_NAME, bean.desc);
             mContext!!.startActivity(i);
-            Toast.makeText(mContext, bean.name, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext, bean.name, Toast.LENGTH_SHORT).show();
 
         }
         return MyViewHolder(item);

@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.wangyuan.kotlindemo.MyActivity">
 
-    <Button
+    <TextView
         android:id="@+id/mBtnReceive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:text="接收数据"/>
     
 </RelativeLayout>

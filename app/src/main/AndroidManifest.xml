@@ -20,6 +20,7 @@
          <activity android:name=".KotlinActivity"></activity>
         <activity android:name="kolintdemo.activity.MyActivity"></activity>
         <activity android:name="kolintdemo.activity.BaseKotlinFragmentActivity"/>
+        <activity android:name="kolintdemo.activity.MyFragmentActivity"/>
     </application>
 
 </manifest>
