@@ -3,4 +3,5 @@
     <item name="todo_title" type="id" />
     <item name="todo_desc" type="id" />
     <item name="todo_add" type="id" />
+    <item name="tag_first" type="id" />
 </resources>

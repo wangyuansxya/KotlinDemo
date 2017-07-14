@@ -8,7 +8,7 @@ import kolintdemo.MyApp
 object MyUtil {
 
     fun dip2px(dipValue: Float): Int {
-        val scale = MyApp.mApp!!.getResources()
+        val scale = MyApp.getInstance().getResources()
                 .getDisplayMetrics().density
         return (dipValue * scale + 0.5f).toInt()
     }

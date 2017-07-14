@@ -7,6 +7,7 @@ import com.wangyuan.kotlindemo.R
 import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.adapter.MainAdapter
 import kolintdemo.bean.KotlinBean
+import kolintdemo.util.StaticValue
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -24,9 +25,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
     }
 
     fun initView() {
-        var activity : KotlinBean = KotlinBean(1, "activity", "01");
-        var fragment : KotlinBean = KotlinBean(2, "fragment", "02");
-        var adapter : KotlinBean = KotlinBean(3, "adapter", "03");
+        var activity : KotlinBean = KotlinBean(StaticValue.ACTIVITY, "activity", "01");
+        var fragment : KotlinBean = KotlinBean(StaticValue.FRAGMENT, "fragment", "02");
+        var adapter : KotlinBean = KotlinBean(StaticValue.ADAPTER, "adapter", "03");
 
         list = listOf<KotlinBean>(activity, fragment, adapter);
 

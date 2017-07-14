@@ -5,7 +5,7 @@ import android.app.Application
 /**
  * Created by wangyuan on 2017/7/12.
  */
-object MyApp : Application() {
+open class MyApp : Application() {
 
     var mApp : MyApp? = null;
 
@@ -14,7 +14,10 @@ object MyApp : Application() {
         mApp = this;
     }
 
-    fun MyApp.getInstance() : MyApp? {
-        return mApp;
+    companion object {
+
+        fun getInstance(): MyApp {
+            return MyApp().mApp!!;
+        }
     }
 }
