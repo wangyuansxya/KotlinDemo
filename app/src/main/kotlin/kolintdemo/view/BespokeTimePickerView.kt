@@ -74,7 +74,7 @@ class BespokeTimePickerView(context: Context?, attrs: AttributeSet?, defStyleAtt
         Log.e("buildBlocks", "isToday=" + isToday)
         val row = TIME_ARRAY.size
         if (mData == null) mData = ArrayList<Block>(row * NUM_COLUMN)
-        val len = mData!!.size
+        val len = mData?.size ?: 0;
         for (i in 0..row - 1) {
             val arr = TIME_ARRAY[i]
             val colmn = arr.size
@@ -98,7 +98,7 @@ class BespokeTimePickerView(context: Context?, attrs: AttributeSet?, defStyleAtt
                 if (isToday == StaticValue.TRUE) {
                     b.state = if (b.displayTimeId < timeId) STATE_DISABLED else STATE_OPEN
                     if (mLastBlock != null) {
-                        mLastBlock!!.state = if (mLastBlock!!.displayTimeId < timeId) STATE_DISABLED else STATE_OPEN
+                        mLastBlock?.state = if (mLastBlock?.displayTimeId ?: APPEND_TIME_ID < timeId) STATE_DISABLED else STATE_OPEN
                         mLastBlock = null
                     }
                 } else {
@@ -185,10 +185,10 @@ class BespokeTimePickerView(context: Context?, attrs: AttributeSet?, defStyleAtt
     private var mLastY = 0f;
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        when(event!!.actionMasked) {
+        when(event?.actionMasked) {
                 MotionEvent.ACTION_UP -> {
-                    mLastX = event!!.x;
-                    mLastY = event!!.y;
+                    mLastX = event?.x;
+                    mLastY = event?.y;
                 }
         }
         return super.onTouchEvent(event)

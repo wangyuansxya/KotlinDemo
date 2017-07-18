@@ -8,8 +8,8 @@ import android.widget.Toast
  */
 open class AbsBaseFragment : Fragment() {
 
-    fun Fragment.toast(text: CharSequence?, duration : Int = Toast.LENGTH_SHORT) {
+    /*fun Fragment.toast(text: CharSequence?, duration : Int = Toast.LENGTH_SHORT) {
         Toast.makeText(activity, text, duration).show()
-    }
+    }*/
 
 }

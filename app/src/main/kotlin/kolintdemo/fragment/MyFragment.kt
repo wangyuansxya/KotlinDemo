@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.wangyuan.kotlindemo.R
 import kolintdemo.util.StaticValue
 import kolintdemo.view.BespokeTimePickerView
+import org.jetbrains.anko.support.v4.toast
 
 /**
  * Created by wangyuan on 2017/7/12.
@@ -38,7 +38,8 @@ class MyFragment : AbsBaseFragment() {
 
     val lis = object : BespokeTimePickerView.OnItemSelected {
         override fun onItemTimeSelect(timeId: Int, time: String) {
-            toast(time, Toast.LENGTH_SHORT);
+//            toast(time, Toast.LENGTH_SHORT);
+            toast(time);
         }
     }
 }
