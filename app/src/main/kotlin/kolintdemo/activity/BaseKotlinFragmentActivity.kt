@@ -9,6 +9,17 @@ import kotlinx.android.synthetic.main.activity_kotlin.*
  */
 open class BaseKotlinFragmentActivity : FragmentActivity() {
 
+    private val items = listOf<String>(
+            "a","b",
+            "c","d",
+            "e","f",
+            "g","h"
+    )
+
+    private val arr = arrayOf(
+            "", ""
+    )
+
     /**
      * 带参数和返回值的方法
      */

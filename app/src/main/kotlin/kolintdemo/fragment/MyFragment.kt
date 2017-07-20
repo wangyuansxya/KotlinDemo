@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.wangyuan.kotlindemo.R
 import kolintdemo.util.StaticValue
-import kolintdemo.view.BespokeTimePickerView
+import kolintdemo.view.TimePickerView
 import org.jetbrains.anko.support.v4.toast
 
 /**
@@ -19,7 +19,7 @@ class MyFragment : AbsBaseFragment() {
         return v
     }
 
-    var timeView : BespokeTimePickerView? = null;
+    var timeView : TimePickerView? = null;
 
     fun initView(v : View?) {
         /*btn_kotlin_frag.setOnClickListener {
@@ -28,7 +28,7 @@ class MyFragment : AbsBaseFragment() {
 //        toast("测试kotlin Toast", Toast.LENGTH_LONG);
 
 
-        this.timeView = v!!.findViewById(R.id.timeView) as BespokeTimePickerView;
+        this.timeView = v!!.findViewById(R.id.timeView) as TimePickerView;
         if(timeView != null) {
             timeView!!.setOnClickListener(timeView)
             timeView!!.buildBlocks(StaticValue.TRUE);
@@ -36,7 +36,7 @@ class MyFragment : AbsBaseFragment() {
         }
     }
 
-    val lis = object : BespokeTimePickerView.OnItemSelected {
+    val lis = object : TimePickerView.OnItemSelected {
         override fun onItemTimeSelect(timeId: Int, time: String) {
 //            toast(time, Toast.LENGTH_SHORT);
             toast(time);

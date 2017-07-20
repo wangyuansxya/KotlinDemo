@@ -15,7 +15,7 @@ import kolintdemo.util.StaticValue
 /**
  * Created by wangyuan on 2017/7/11.
  */
-class BespokeTimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : View(context, attrs, defStyleAttr), View.OnClickListener {
+class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : View(context, attrs, defStyleAttr), View.OnClickListener {
 
     constructor(context: Context?) : this(context, null, 0){
         init(context);

@@ -11,7 +11,7 @@
         android:layout_below="@+id/tv_time"
         android:scrollbars="none">
 
-        <kolintdemo.view.BespokeTimePickerView
+        <kolintdemo.view.TimePickerView
             android:id="@+id/timeView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
