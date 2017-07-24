@@ -2,7 +2,6 @@ package kolintdemo.activity
 
 import android.os.Bundle
 import com.wangyuan.kotlindemo.R
-import kolintdemo.util.StaticValue
 import kotlinx.android.synthetic.main.activity_fragment_my.*
 
 /**

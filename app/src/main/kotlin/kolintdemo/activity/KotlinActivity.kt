@@ -4,7 +4,6 @@ package com.wangyuan.kotlindemo
 // Using R.layout.activity_main from the main source set.引入xml文件
 import android.os.Bundle
 import kolintdemo.activity.BaseKotlinFragmentActivity
-import kolintdemo.util.StaticValue
 import kotlinx.android.synthetic.main.kotlin_fragment_activity.*
 
 //import kotlinx.android.synthetic.main.<layout>.*

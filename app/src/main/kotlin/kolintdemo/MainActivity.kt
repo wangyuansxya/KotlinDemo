@@ -10,13 +10,19 @@ import com.wangyuan.kotlindemo.R
 import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.adapter.MainAdapter
 import kolintdemo.bean.KotlinBean
-import kolintdemo.util.StaticValue
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * Created by wangyuan on 2017/7/12.
  */
 class MainActivity : BaseKotlinFragmentActivity() {
+
+    companion object {
+        val ACTIVITY :Int = 1;
+        val FRAGMENT :Int = 2;
+        val VIEW :Int = 3;
+    }
+
     private val arr : Array<String> = arrayOf("activity", "fragment", "adapter")
     private var list : List<KotlinBean>? = null;
 
@@ -34,9 +40,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
     }
 
     fun initView() {
-        var activity : KotlinBean = KotlinBean(StaticValue.ACTIVITY, "activity", "测试kotlin Activity");
-        var fragment : KotlinBean = KotlinBean(StaticValue.FRAGMENT, "fragment", "测试kotlin fragment");
-        var adapter : KotlinBean = KotlinBean(StaticValue.VIEW, "View", "测试kotlin View");
+        var activity : KotlinBean = KotlinBean(ACTIVITY, "activity", "测试kotlin Activity");
+        var fragment : KotlinBean = KotlinBean(FRAGMENT, "fragment", "测试kotlin fragment");
+        var adapter : KotlinBean = KotlinBean(VIEW, "View", "测试kotlin View");
 
         val a1 = adapter.copy(name = "person");
 
@@ -65,6 +71,7 @@ class MainActivity : BaseKotlinFragmentActivity() {
         var p = Person();
         p.name = "person";
 
+        list!!.map { System.out.print(it.id) }
 
     }
 

@@ -1,5 +1,6 @@
 package kolintdemo.util
 
+import kolintdemo.MyApp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -9,7 +10,7 @@ import java.util.*
 object MyUtil {
 
     fun dip2px(dipValue: Float): Int {
-        val scale = StaticValue.mApp!!.getResources()
+        val scale = MyApp.mApp!!.getResources()
                 .getDisplayMetrics().density
         return (dipValue * scale + 0.5f).toInt()
     }
@@ -18,7 +19,7 @@ object MyUtil {
      * sp转像素
      */
     fun sp2px(spValue: Float): Float {
-        val scale = StaticValue.mApp!!.getResources()
+        val scale = MyApp.mApp!!.getResources()
                 .getDisplayMetrics().scaledDensity
         return (spValue * scale + 0.5f).toFloat();
     }

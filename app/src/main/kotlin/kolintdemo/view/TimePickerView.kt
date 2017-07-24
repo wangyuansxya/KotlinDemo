@@ -9,8 +9,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import com.wangyuan.kotlindemo.R
+import kolintdemo.MyApp
 import kolintdemo.util.MyUtil
-import kolintdemo.util.StaticValue
 
 /**
  * Created by wangyuan on 2017/7/11.
@@ -25,6 +25,9 @@ class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
     }
 
     companion object {
+        val TRUE = 1
+        val FALSE = 0
+
         private val APPEND_TIME_ID = 13
 
         private val STATE_DISABLED = 0;
@@ -95,7 +98,7 @@ class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
                     mData!!.add(b)
                 }
 
-                if (isToday == StaticValue.TRUE) {
+                if (isToday == TRUE) {
                     b.state = if (b.displayTimeId < timeId) STATE_DISABLED else STATE_OPEN
                     if (mLastBlock != null) {
                         mLastBlock?.state = if (mLastBlock?.displayTimeId ?: APPEND_TIME_ID < timeId) STATE_DISABLED else STATE_OPEN
@@ -112,7 +115,7 @@ class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        val width = StaticValue.screenWidth
+        val width = MyApp.screenWidth
         val len = TIME_ARRAY.size
         val height = height!!.times(len);
         setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.AT_MOST))
@@ -210,7 +213,7 @@ class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
         val b = mData!!.get(index)
         val currentTimeId = MyUtil.getTimeToID(MyUtil.getCurrentTime())
         val timeId = MyUtil.parseInt(currentTimeId, 0)
-        if (mLastDay == StaticValue.TRUE && b.displayTimeId < timeId) {
+        if (mLastDay == TRUE && b.displayTimeId < timeId) {
             Toast.makeText(this.context, "当前时间已过", Toast.LENGTH_SHORT).show()
         } else {
             if (b.state == STATE_DISABLED || b.state == STATE_SELECTED) return
