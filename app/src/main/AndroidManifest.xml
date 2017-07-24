@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangyuan.kotlindemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="kolintdemo.MyApp"
         android:allowBackup="true"

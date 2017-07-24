@@ -3,6 +3,7 @@ package kolintdemo
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.wangyuan.kotlindemo.R
@@ -37,17 +38,49 @@ class MainActivity : BaseKotlinFragmentActivity() {
         var fragment : KotlinBean = KotlinBean(StaticValue.FRAGMENT, "fragment", "测试kotlin fragment");
         var adapter : KotlinBean = KotlinBean(StaticValue.VIEW, "View", "测试kotlin View");
 
+        val a1 = adapter.copy(name = "person");
+
+        //KotlinBean(id, name, desc)
+
+        val a2 = adapter
+
+
         list = listOf<KotlinBean>(activity, fragment, adapter);
+
+        //使用anko方式获取view
+        //val mRecycleView : RecyclerView = find<RecyclerView>(R.id.mRecycleView);
 
         mRecycleView.layoutManager = LinearLayoutManager(this);
         mRecycleView.adapter = MainAdapter(this, list);
         Log.d("MainActivity", "MainActivity=" + arr.asList())
 
         val name = bean?.name ?: "empty"
+
+        val c = name[1];
+
+        for(c in name) {
+            print(c);
+        }
+
+        var p = Person();
+        p.name = "person";
+
+
     }
 
-    fun Fragment.aaaa(msg: String?) {
+    fun Fragment.toast(msg: String?) {
         Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show();
     }
 
+    inner class Person {
+        var name: String = ""
+            get() = field.toUpperCase()
+            set(value){
+                field = "Name: $value"
+            }
+    }
+
+    var RecyclerView.Adapter: MainAdapter
+        get() = MainAdapter();
+        set(MainAdapter) = setAdapter(MainAdapter);
 }
