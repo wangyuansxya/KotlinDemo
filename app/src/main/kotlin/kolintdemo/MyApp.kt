@@ -5,7 +5,7 @@ import android.app.Application
 /**
  * Created by wangyuan on 2017/7/12.
  */
-open class MyApp : Application() {
+class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -18,7 +18,11 @@ open class MyApp : Application() {
     companion object {
         var screenWidth : Int = 0;
         var screenHeight : Int = 0;
-        var mApp : MyApp? = null;
+        private var mApp : MyApp
+        get() = mApp;
+        set(value) {mApp = value}
+
+        fun getInstance() : MyApp = mApp;
     }
 
 }
