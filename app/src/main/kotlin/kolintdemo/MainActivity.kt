@@ -73,6 +73,8 @@ class MainActivity : BaseKotlinFragmentActivity() {
 
         list!!.map { System.out.print(it.id) }
 
+        val k : KotlinBean? = list!!.firstOrNull { it.id * 2 == 0 };
+
     }
 
     fun Fragment.toast(msg: String?) {
