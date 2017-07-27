@@ -217,7 +217,7 @@ class TimePickerView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
             Toast.makeText(this.context, "当前时间已过", Toast.LENGTH_SHORT).show()
         } else {
             if (b.state == STATE_DISABLED || b.state == STATE_SELECTED) return
-            if (mLastBlock != null && mLastBlock!!.state == STATE_SELECTED) mLastBlock!!.state = STATE_OPEN
+            if (mLastBlock != null && mLastBlock?.state == STATE_SELECTED) mLastBlock?.state = STATE_OPEN
             b.state = STATE_SELECTED
             mLastBlock = b
             invalidate()
