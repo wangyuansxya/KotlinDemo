@@ -10,12 +10,15 @@ import com.wangyuan.kotlindemo.R
 import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.adapter.MainAdapter
 import kolintdemo.bean.KotlinBean
-import kotlinx.android.synthetic.main.activity_main.*
+import kolintdemo.ext.TypedClass
+import org.jetbrains.anko.find
 
 /**
  * Created by wangyuan on 2017/7/12.
  */
 class MainActivity : BaseKotlinFragmentActivity() {
+
+    val t = TypedClass<Int>(20);
 
     companion object {
         val ACTIVITY :Int = 1;
@@ -35,7 +38,7 @@ class MainActivity : BaseKotlinFragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.kotlin_fragment_activity);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main, true);
         initView();
     }
 
@@ -44,23 +47,23 @@ class MainActivity : BaseKotlinFragmentActivity() {
         var fragment : KotlinBean = KotlinBean(FRAGMENT, "fragment", "测试kotlin fragment");
         var adapter : KotlinBean = KotlinBean(VIEW, "View", "测试kotlin View");
 
-        val a1 = adapter.copy(name = "person");
+//        val a1 = adapter.copy(name = "person");
 
         //KotlinBean(id, name, desc)
 
-        val a2 = adapter
+//        val a2 = adapter
 
 
         list = listOf<KotlinBean>(activity, fragment, adapter);
 
         //使用anko方式获取view
-        //val mRecycleView : RecyclerView = find<RecyclerView>(R.id.mRecycleView);
+        val mRecycleView : RecyclerView = find<RecyclerView>(R.id.mRecycleView);
 
-        mRecycleView.layoutManager = LinearLayoutManager(this);
-        mRecycleView.adapter = MainAdapter(this, list);
+        mRecycleView?.layoutManager = LinearLayoutManager(this);
+        mRecycleView?.adapter = MainAdapter(this, list);
         Log.d("MainActivity", "MainActivity=" + arr.asList())
 
-        val name = bean?.name ?: "empty"
+        /*val name = bean?.name ?: "empty"
 
         val c = name[1];
 
@@ -71,10 +74,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
         var p = Person();
         p.name = "person";
 
-        list!!.map { System.out.print(it.id) }
+        list?.map { System.out.print(it.id) }
 
-        val k : KotlinBean? = list!!.firstOrNull { it.id * 2 == 0 };
-
+        val k : KotlinBean? = list?.firstOrNull { it.id * 2 == 0 };*/
     }
 
     fun Fragment.toast(msg: String?) {

@@ -1,7 +1,10 @@
 package kolintdemo.activity
 
 import android.support.v4.app.FragmentActivity
+import android.view.View
+import android.view.ViewGroup
 import com.wangyuan.kotlindemo.KotlinActivity
+import com.wangyuan.kotlindemo.R
 import kotlinx.android.synthetic.main.activity_kotlin.*
 
 /**
@@ -45,5 +48,17 @@ open class BaseKotlinFragmentActivity : FragmentActivity() {
     fun KotlinActivity.b(s: String?) {
         // Instead of findView(R.id.textView) as TextView.settext
         this.mTvFirst.setText(s);
+    }
+
+    fun setContentView(layoutResID: Int, showTitle : Boolean = false) {
+        when(showTitle) {
+            true -> {
+                val root : ViewGroup = View.inflate(this, R.layout.activity_base, null) as ViewGroup;
+                /*val v : View = */View.inflate(this, layoutResID, root);
+                super.setContentView(root)
+            } else -> {
+                super.setContentView(layoutResID)
+            }
+        }
     }
 }

@@ -18,11 +18,9 @@ class MyApp : Application() {
     companion object {
         var screenWidth : Int = 0;
         var screenHeight : Int = 0;
-        private var mApp : MyApp
-        get() = mApp;
-        set(value) {mApp = value}
+        private var mApp : MyApp? = null
 
-        fun getInstance() : MyApp = mApp;
+        fun getInstance() : MyApp = mApp!!;
     }
 
 }

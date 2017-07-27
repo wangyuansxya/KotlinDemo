@@ -12,7 +12,7 @@ class MyFragmentActivity : BaseKotlinFragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_my);
-        mTvFragmentTitle.setText(intent.getStringExtra(StaticValue.EXTRA_NAME));
+        mTvFragmentTitle.setText(intent.getStringExtra(MyActivity.EXTRA_NAME));
     }
 
 }

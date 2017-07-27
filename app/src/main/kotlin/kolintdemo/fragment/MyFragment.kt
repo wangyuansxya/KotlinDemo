@@ -30,7 +30,7 @@ class MyFragment : AbsBaseFragment() {
         this.timeView = v!!.findViewById(R.id.timeView) as TimePickerView;
         if(timeView != null) {
             timeView!!.setOnClickListener(timeView)
-            timeView!!.buildBlocks(StaticValue.TRUE);
+            timeView!!.buildBlocks(TimePickerView.TRUE);
             timeView!!.setCallBack(lis);
         }
     }
