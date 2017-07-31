@@ -34,6 +34,73 @@ android {
         }
     }
 
+    productFlavors {
+        xiaomi {}
+        OPPO {}
+        vivo {}
+        gionee {}
+        lenovomm {}
+        flyme {}
+        hicloud {}
+        "10086" {}
+        "189store" {}
+        wostore {}
+        dianxin_fufei {}
+        baiduzs {}
+        "91zs" {}
+        anzhuoapk {}
+        qqapp {}
+        qqapp_wxz {}
+        "360zs" {}
+        wandoujia {}
+        anzhi {}
+        ucstore {}
+        SFapp_91zhuomian {}
+        Nduo {}
+        yingyonghui {}
+        jifeng {}
+        mumayi {}
+        youyi {}
+        liqu {}
+        "3Gmenhu" {}
+        wangyi {}
+        taobaozs {}
+        sogouzs {}
+        suningyigou {}
+        sogousch {}
+        amazon {}
+        bianfeng {}
+        mogu {}
+        zhuoyi {}
+        kuchuan {}
+        weixin {}
+        bdpz_pc {}
+        bdpz_wap {}
+        wandoujia_fufei {}
+        yingyongbao_fufei {}
+        "91zhuomian-fufei" {}
+        lenovomm_fufei {}
+        samsung {}
+        letv {}
+        edu {}
+        PC_landing {}
+        Mobile_landing {}
+        Baidu_network_APP {}
+        shoujitengxun {}
+        tengxunxinwen {}
+        tencentPhoneHK {}
+        putao {}
+        bubugao {}
+        adultwechat {}
+        juniorwechat {}
+        landing {}
+        "51talk" {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
+
 }
 
 dependencies {
