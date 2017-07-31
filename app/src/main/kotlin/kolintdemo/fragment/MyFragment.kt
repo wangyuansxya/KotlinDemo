@@ -1,10 +1,14 @@
 package kolintdemo.fragment
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.wangyuan.kotlindemo.R
+import kolintdemo.MyApp
+import kolintdemo.ext.showToast
 import kolintdemo.view.TimePickerView
 import org.jetbrains.anko.support.v4.toast
 
@@ -39,6 +43,7 @@ class MyFragment : AbsBaseFragment() {
         override fun onItemTimeSelect(timeId: Int, time: String) {
 //            toast(time, Toast.LENGTH_SHORT);
             toast(time);
+            showToast<Fragment>(MyApp.getInstance(),time, Toast.LENGTH_SHORT);
         }
     }
 }

@@ -1,11 +1,9 @@
 package kolintdemo
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.widget.Toast
 import com.wangyuan.kotlindemo.R
 import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.adapter.MainAdapter
@@ -77,10 +75,6 @@ class MainActivity : BaseKotlinFragmentActivity() {
         list?.map { System.out.print(it.id) }
 
         val k : KotlinBean? = list?.firstOrNull { it.id * 2 == 0 };*/
-    }
-
-    fun Fragment.toast(msg: String?) {
-        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show();
     }
 
     inner class Person {
