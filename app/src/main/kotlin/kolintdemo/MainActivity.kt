@@ -8,6 +8,7 @@ import com.wangyuan.kotlindemo.R
 import kolintdemo.activity.BaseKotlinFragmentActivity
 import kolintdemo.adapter.MainAdapter
 import kolintdemo.bean.KotlinBean
+import kolintdemo.ext.CacheExt
 import kolintdemo.ext.TypedClass
 import org.jetbrains.anko.find
 
@@ -38,6 +39,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
 //        setContentView(R.layout.kotlin_fragment_activity);
         setContentView(R.layout.activity_main, true);
         initView();
+
+//        MySharePreference<String>(applicationContext, "sp_name", "key", "");
+        CacheExt.preference(applicationContext, "sp_name", "key", "")
     }
 
     fun initView() {
