@@ -79,6 +79,9 @@ class MainActivity : BaseKotlinFragmentActivity() {
         list?.map { System.out.print(it.id) }
 
         val k : KotlinBean? = list?.firstOrNull { it.id * 2 == 0 };*/
+
+        val sum = {x : Int, y : Int -> x + y}
+        sum(4, 6);
     }
 
     inner class Person {
